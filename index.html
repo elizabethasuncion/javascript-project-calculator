@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        function appendOperation(operation) {
+            document.getElementById('resultArea').innerHTML += operation;
+        }
+
+        function calculateResult() {
+            if (appendOperation != "") {
+                let result = document.getElementById("resultArea").innerHTML;
+                document.getElementById("resultArea").innerHTML = eval(result);
+            } else {
+                document.getElementById("resultArea").innerHTML = "Error";
+            }
+        }
+
+        function deletLast() {
+            let container = document.getElementById('resultArea');
+            if (container.innerHTML.endsWith(' ')) {
+                container.innerHTML = container.innerHTML.slice(0, -3);
+            } else {
+                container.innerHTML = container.innerHTML.slice(0, -1);
+            }
+        }
+
+        function convertNumber() {
+            let result = document.getElementById("resultArea").innerHTML;
+            document.getElementById("resultArea").innerHTML = eval(result) * (-1);
+        }
+
+        function percentage() {
+            let result = document.getElementById("resultArea").innerHTML;
+            console.log(result);
+            let myne = document.getElementById("resultArea").innerHTML = eval(result) / 100
+
+        }
+    </script>
+
+</head>
+
+
+
+<body>
+    <div id="resultArea"></div>
+    <table>
+        <tr>
+            <td onclick="deletLast()" id="grey">AC</td>
+            <td onclick="convertNumber()" id="grey">+/-</td>
+            <td onclick="percentage()" id="grey">%</td>
+            <td onclick="appendOperation(' / ')" id="mostard">/</td>
+        </tr>
+        <tr>
+            <td onclick="appendOperation(7)">7</td>
+            <td onclick="appendOperation(8)">8</td>
+            <td onclick="appendOperation(9)">9</td>
+            <td onclick="appendOperation(' * ')" id="mostard">x</td>
+        </tr>
+        <tr>
+            <td onclick="appendOperation(4)">4</td>
+            <td onclick="appendOperation(5)">5</td>
+            <td onclick="appendOperation(6)">6</td>
+            <td onclick="appendOperation(' - ')" id="mostard">-</td>
+        </tr>
+        <tr>
+            <td onclick="appendOperation(1)">1</td>
+            <td onclick="appendOperation(2)">2</td>
+            <td onclick="appendOperation(3)">3</td>
+            <td onclick="appendOperation(' + ')" id="mostard">+</td>
+        </tr>
+        <tr>
+            <td onclick="appendOperation(0)">0</td>
+            <td onclick="appendOperation(3.141592)">pi</td>
+            <td onclick="appendOperation('.')">,</td>
+            <td onclick="calculateResult ()" id="mostard">=</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

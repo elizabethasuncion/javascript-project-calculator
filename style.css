@@ -1,0 +1,58 @@
+body {
+    font-family: 'Acme', sans-serif;
+    margin: 0;
+}
+
+table {
+    width: 100%;
+    height: 70vh;
+    background-color: black;
+    color: white;
+}
+
+td {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 25px;
+    background-color: rgb(50, 43, 43);
+    border-radius: 50%;
+}
+
+td:hover {
+    background-color: rgb(83, 78, 78);
+    cursor: pointer;
+}
+
+#resultArea {
+    height: 30vh;
+    background-color: black;
+    color: white;
+    font-size: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+h1 {
+    margin: 0;
+    color: whitesmoke;
+}
+
+#grey {
+    background-color: gray;
+}
+
+#grey:hover {
+    background-color: rgba(245, 245, 245, 0.74);
+}
+
+#mostard {
+    background-color: rgb(219, 152, 37);
+}
+
+#mostard:hover {
+    background-color: moccasin;
+}
